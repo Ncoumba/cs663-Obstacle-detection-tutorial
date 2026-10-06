@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Technical Example: YOLO Object Detection</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Technical Example: YOLO Object Detection</h1>
+
+    <p>
+      A simple example showing how an object detector can process an image
+      and return information about detected objects.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <h2>Why Use YOLO?</h2>
+
+      <p>
+        YOLO is useful for obstacle detection because it can identify multiple
+        objects in one image and return their locations using bounding boxes.
+        YOLO-based detectors have been used in several assistive navigation
+        systems reviewed in this tutorial
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>
+        <a href="bibliography.html#source4">[4]</a>.
+      </p>
+
+
+      <h2>Basic YOLO Example</h2>
+
+      <p>
+        The following Python example shows the basic steps for loading a
+        pretrained YOLO model and running object detection on an image.
+      </p>
+
+      <pre><code>
+from ultralytics import YOLO
+
+# Load a pretrained YOLO model
+model = YOLO("yolov8n.pt")
+
+# Run object detection on an image
+results = model("street.jpg")
+
+# Examine the detected objects
+for result in results:
+    for box in result.boxes:
+
+        class_id = int(box.cls[0])
+        confidence = float(box.conf[0])
+        coordinates = box.xyxy[0]
+
+        print("Class ID:", class_id)
+        print("Confidence:", confidence)
+        print("Bounding Box:", coordinates)
+      </code></pre>
+
+
+      <h2>Step 1: Load the Model</h2>
+
+      <p>
+        The first line imports the YOLO class from the Ultralytics library.
+        The program then loads a pretrained YOLOv8 Nano model.
+      </p>
+
+      <pre><code>
+model = YOLO("yolov8n.pt")
+      </code></pre>
+
+      <p>
+        The Nano version is one of the smaller YOLO models. Smaller models are
+        useful when speed and computational resources are important, which is
+        especially relevant for mobile applications.
+      </p>
+
+      <p>
+        Mobile research demonstrates that model size and input resolution affect
+        both inference speed and detection accuracy
+        <a href="bibliography.html#source3">[3]</a>.
+      </p>
+
+
+      <h2>Step 2: Process the Image</h2>
+
+      <pre><code>
+results = model("street.jpg")
+      </code></pre>
+
+      <p>
+        The image is passed through the neural network. The model analyzes the
+        visual features in the image and predicts objects that it has been trained
+        to recognize.
+      </p>
+
+      <p>
+        For a real mobile system, the input would usually come from a camera
+        frame instead of a stored image.
+      </p>
+
+
+      <h2>Step 3: Read the Detection Results</h2>
+
+      <p>
+        Each detected object contains several pieces of information.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Class ID:</strong> identifies the type of object detected.
+        </li>
+
+        <li>
+          <strong>Confidence:</strong> indicates how certain the model is about
+          its prediction.
+        </li>
+
+        <li>
+          <strong>Bounding Box:</strong> describes where the object appears in
+          the image.
+        </li>
+      </ul>
+
+      <pre><code>
+class_id = int(box.cls[0])
+confidence = float(box.conf[0])
+coordinates = box.xyxy[0]
+      </code></pre>
+
+
+      <h2>Example Detection</h2>
+
+      <p>
+        Imagine the model processes a sidewalk image and returns the following:
+      </p>
+
+      <pre><code>
+Object: Person
+Confidence: 0.91
+Bounding Box: [210, 85, 410, 620]
+      </code></pre>
+
+      <p>
+        This means that the model believes there is a person in the image with
+        approximately 91% confidence. The four bounding-box coordinates describe
+        the location of that person in the image.
+      </p>
+
+
+      <h2>Adding a Confidence Threshold</h2>
+
+      <p>
+        A practical application may ignore detections with very low confidence.
+        For example:
+      </p>
+
+      <pre><code>
+if confidence >= 0.60:
+    print("Possible obstacle detected")
+      </code></pre>
+
+      <p>
+        In this example, only detections with a confidence score of at least
+        0.60 are accepted.
+      </p>
+
+      <p>
+        The threshold must be chosen carefully. A very high threshold may cause
+        the system to miss real obstacles, while a very low threshold may produce
+        too many false detections.
+      </p>
+
+
+      <h2>From Object Detection to Obstacle Detection</h2>
+
+      <p>
+        The code above only performs object detection. A complete assistive
+        system would require another decision step.
+      </p>
+
+      <p>
+        For example:
+      </p>
+
+      <pre><code>
+if confidence >= 0.60:
+
+    if object_is_in_user_path:
+        warn_user()
+      </code></pre>
+
+      <p>
+        The variable <code>object_is_in_user_path</code> represents an additional
+        obstacle-analysis step. A real system could use the bounding-box position,
+        depth estimation, object movement, or the user's direction of travel to
+        make this decision
+        <a href="bibliography.html#source5">[5]</a>
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
+
+      <h2>Simplified Algorithm</h2>
+
+      <p>
+        The complete process can be represented with the following pseudocode:
+      </p>
+
+      <pre><code>
+WHILE application is running:
+
+    Capture camera frame
+
+    Resize / preprocess frame
+
+    Run object detector
+
+    FOR each detected object:
+
+        Read class
+        Read confidence
+        Read bounding box
+
+        IF confidence is high enough:
+
+            Estimate whether object is in user's path
+
+            IF object represents a possible obstacle:
+
+                Generate audio or haptic warning
+      </code></pre>
+
+
+      <h2>Why Not Use the Largest YOLO Model?</h2>
+
+      <p>
+        Larger models may provide better detection performance, but they also
+        require more memory and computation. On a smartphone, that can reduce
+        processing speed and increase battery usage.
+      </p>
+
+      <p>
+        This creates an important engineering trade-off:
+      </p>
+
+      <p>
+        <strong>
+          Higher Accuracy ↔ Faster Processing and Lower Resource Usage
+        </strong>
+      </p>
+
+      <p>
+        Research on YOLOv8 Android deployment shows this trade-off directly
+        <a href="bibliography.html#source3">[3]</a>.
+      </p>
+
+
+      <h2>Alternative Approaches</h2>
+
+      <p>
+        YOLO is not the only possible approach. Earlier smartphone research has
+        also explored Faster R-CNN
+        <a href="bibliography.html#source2">[2]</a>.
+      </p>
+
+      <p>
+        Other approaches use optical flow and feature tracking rather than
+        relying entirely on object classification
+        <a href="bibliography.html#source5">[5]</a>.
+      </p>
+
+      <p>
+        For a mobile obstacle detection application, YOLO is attractive because
+        of its ability to balance real-time speed and detection capability.
+        However, combining YOLO with depth or motion information can provide
+        additional information that basic 2D object detection does not provide.
+      </p>
+
+
+      <h2>Key Takeaway</h2>
+
+      <p>
+        The object detector is only one component of an assistive navigation
+        system. YOLO can answer:
+      </p>
+
+      <p>
+        <strong>"What objects are visible, and where are they?"</strong>
+      </p>
+
+      <p>
+        The complete obstacle detection system must then answer:
+      </p>
+
+      <p>
+        <strong>"Which of these objects could interfere with the user's movement?"</strong>
+      </p>
+
+
+      <p>
+        <a href="index.html">← Back to Home</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS663 Computer Vision Tutorial | Ndeye Traore</p>
+  </footer>
+
+</body>
+</html>
