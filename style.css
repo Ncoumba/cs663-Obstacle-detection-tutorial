@@ -91,3 +91,14 @@ footer {
 .card-link:hover .section-card h3 {
   text-decoration: underline;
 }
+pre {
+  background-color: #f1f4f8;
+  padding: 18px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border-left: 4px solid #1f3c5b;
+}
+
+code {
+  font-family: "Courier New", monospace;
+}
