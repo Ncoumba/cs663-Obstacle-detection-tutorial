@@ -121,3 +121,23 @@ code {
   font-style: italic;
   line-height: 1.5;
 }
+button {
+  background-color: #1f3c5b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #16304a;
+}
+
+#quizResult {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #f1f4f8;
+  border-radius: 8px;
+}
