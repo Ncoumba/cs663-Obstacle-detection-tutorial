@@ -33,90 +33,129 @@
       </p>
 
       <p>
-        The detected objects are then evaluated to determine whether they may
-        represent an obstacle. If an object is considered important, the system
-        can communicate a warning to the user through audio, vibration, or another
-        feedback method.
+        After objects are detected, the system must determine whether they are
+        actually relevant to the user's movement. If an object is considered
+        important, the system can communicate a warning through audio, vibration,
+        or another feedback method
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
 
       <h2>Step 1: Camera Input</h2>
 
       <p>
-        The process begins with the smartphone camera. The camera continuously
-        captures images or video frames from the environment in front of the user.
-        These frames provide the visual information that the computer vision system
-        will analyze.
+        The process begins with the smartphone camera. The camera captures images
+        or video frames from the environment in front of the user. These frames
+        become the visual input for the computer vision system.
+      </p>
+
+      <p>
+        Smartphone-based systems have been used in previous research because the
+        phone provides the camera and processing hardware in a portable device
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
       <h2>Step 2: Image Preprocessing</h2>
 
       <p>
-        Before an image is sent to the object detection model, it may need to be
-        resized or adjusted to match the input requirements of the model.
-        Preprocessing can help reduce the amount of computation required and can
-        make the image format consistent for the detector.
+        Before the image is sent to the object detection model, it may be resized
+        or converted into the format required by the model. This step is called
+        preprocessing.
+      </p>
+
+      <p>
+        Resizing is important on mobile devices because larger images require more
+        computation. Research using YOLOv8 on Android demonstrates the trade-off
+        between input resolution, inference speed, and detection performance
+        <a href="bibliography.html#source3">[3]</a>.
       </p>
 
       <h2>Step 3: Object Detection</h2>
 
       <p>
-        The processed frame is passed into an object detection model such as YOLO.
-        The model analyzes the image and produces detections that usually include
-        an object class, a bounding box, and a confidence score.
+        The processed frame is passed into an object detector such as YOLO.
+        The detector analyzes the image and produces information about the objects
+        it finds.
       </p>
 
       <p>
-        For example, the system may detect a person, bicycle, chair, car, or another
-        object that could potentially affect the user's path.
+        A detection usually includes:
+      </p>
+
+      <ul>
+        <li>An object class, such as person, bicycle, or car</li>
+        <li>A bounding box showing the object's location</li>
+        <li>A confidence score describing the certainty of the detection</li>
+      </ul>
+
+      <p>
+        YOLO-based object detectors have been used in multiple assistive
+        navigation systems
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>
+        <a href="bibliography.html#source4">[4]</a>.
       </p>
 
       <h2>Step 4: Determine Whether the Object Is an Obstacle</h2>
 
       <p>
-        Object detection alone is not enough. The system must decide whether the
-        detected object is actually relevant to the user's movement.
+        This is one of the most important steps. A detected object is not
+        automatically an obstacle.
       </p>
 
       <p>
-        An object located directly in front of the user may be more important than
-        an object near the edge of the camera image. The system may therefore use
-        the position of the bounding box, the size of the detected object, movement
-        information, or other cues to estimate whether the object creates a possible
-        collision risk.
+        For example, the camera might detect several people, cars, or other
+        objects, but only one of them may actually be located in the user's
+        walking path.
+      </p>
+
+      <p>
+        Systems can use additional information such as bounding-box position,
+        object size, depth estimates, motion, or the direction of the user's
+        movement to decide which objects are most important
+        <a href="bibliography.html#source5">[5]</a>
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
 
       <h2>Step 5: Generate User Feedback</h2>
 
       <p>
-        Once the system determines that a possible obstacle is important, it must
-        communicate this information to the user. One option is audio feedback,
-        where the phone announces the detected obstacle through the speaker or
-        headphones.
+        Once the system decides that an object represents a possible obstacle,
+        the information must be communicated to the user.
       </p>
 
       <p>
-        Another option is haptic feedback, where different vibration patterns can
-        communicate warnings without requiring the user to constantly listen to
-        spoken messages.
-      </p>
-
-      <h2>Step 6: Repeat in Real Time</h2>
-
-      <p>
-        Because the user and surrounding objects may be moving, the entire process
-        needs to repeat continuously. New camera frames are captured, analyzed,
-        and converted into updated feedback.
+        One option is auditory feedback. The phone can use speech or sound to
+        describe the detected obstacle. Another option is haptic feedback, where
+        the phone uses vibration patterns to provide a warning.
       </p>
 
       <p>
-        The faster this cycle can be completed, the more quickly the system can
-        respond to changes in the environment.
+        The 2025 mobile obstacle detection system by Bastidas-Guacho and
+        colleagues uses both auditory and haptic feedback
+        <a href="bibliography.html#source1">[1]</a>.
       </p>
 
-      <h2>System Flow</h2>
+      <h2>Step 6: Repeat the Process</h2>
 
       <p>
-        A simplified mobile obstacle detection pipeline can be represented as:
+        Because the user and surrounding objects may be moving, obstacle detection
+        cannot happen only once. The system must continuously capture new frames,
+        process them, detect objects, evaluate their importance, and update the
+        feedback given to the user.
+      </p>
+
+      <p>
+        Some approaches also analyze information across consecutive frames.
+        For example, motion-based methods can use optical flow and feature
+        tracking to better understand how the scene changes while the user moves
+        <a href="bibliography.html#source5">[5]</a>.
+      </p>
+
+      <h2>Complete System Flow</h2>
+
+      <p>
+        A simplified pipeline can be represented as:
       </p>
 
       <p>
@@ -127,10 +166,10 @@
       </p>
 
       <p>
-        This pipeline shows that the object detector is only one part of the
-        complete assistive system. A successful application must also process the
-        camera input efficiently, determine which detections are important, and
-        communicate useful information to the user.
+        This pipeline shows why obstacle detection is more than running an object
+        detection model. The detector identifies objects, but the complete system
+        must also determine which detections matter and communicate the result
+        quickly enough to be useful.
       </p>
 
       <p>
