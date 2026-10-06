@@ -102,3 +102,22 @@ pre {
 code {
   font-family: "Courier New", monospace;
 }
+.tutorial-figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.tutorial-figure img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tutorial-figure figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.5;
+}
