@@ -24,7 +24,7 @@
 
     <section class="intro">
 
-      <h2>[1] Bastidas-Guacho et al. (2025)</h2>
+      <h2 id="source1">[1] Bastidas-Guacho et al. (2025)</h2>
 
       <p>
         <strong>Citation:</strong><br>
@@ -38,22 +38,22 @@
 
       <p>
         <strong>Synopsis:</strong><br>
-        This study presents a mobile obstacle detection application designed
-        for visually impaired users. The system uses a YOLOv5s-based object
-        detector and a custom dataset called Detectra containing 7,600 images
-        and 76 object classes. The model is integrated into a mobile application
-        that provides both auditory and haptic feedback. The research is useful
-        to this tutorial because it demonstrates a complete modern pipeline from
-        mobile camera input to computer vision detection and user feedback.
+        This study presents a mobile obstacle detection system designed
+        for visually impaired users. The system uses computer vision
+        and a YOLO-based object detector to identify objects in the
+        environment. The researchers created the Detectra dataset,
+        containing 7,600 images and 76 object classes. The mobile
+        application also provides auditory and haptic feedback to
+        communicate detected obstacles to the user.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
-        This is a strong academic source because it is a recent peer-reviewed
-        journal article published in Multimodal Technologies and Interaction.
-        The paper explains its dataset, model selection, evaluation metrics,
-        implementation approach, and user testing. It is especially relevant
-        because its topic closely matches this tutorial.
+        This is a strong academic source because it is a recent
+        peer-reviewed journal article. The researchers explain their
+        dataset, object detection model, implementation, evaluation
+        metrics, and mobile application. It is especially relevant
+        because the subject closely matches this tutorial.
       </p>
 
       <p>
@@ -63,32 +63,34 @@
       </p>
 
 
-      <h2>[2] Lin, Lee, and Chiang (2017)</h2>
+      <h2 id="source2">[2] Lin, Lee, and Chiang (2017)</h2>
 
       <p>
         <strong>Citation:</strong><br>
         Lin, B.-S., Lee, C.-C., & Chiang, P.-Y. (2017).
-        <em>Simple Smartphone-Based Guiding System for Visually Impaired People.</em>
+        <em>Simple Smartphone-Based Guiding System for Visually
+        Impaired People.</em>
         Sensors, 17(6), 1371.
       </p>
 
       <p>
         <strong>Synopsis:</strong><br>
-        This paper presents a smartphone-based guiding system for visually
-        impaired users. The smartphone captures images of the environment,
-        and object recognition is performed using either Faster R-CNN or YOLO.
-        The system supports both online and offline operation depending on
-        network availability. The study is useful because it shows an earlier
-        example of how smartphones and deep-learning-based object recognition
-        were combined for navigation assistance.
+        This paper presents a smartphone-based guiding system for
+        visually impaired users. The smartphone captures visual
+        information from the environment, and object recognition
+        can be performed using Faster R-CNN or YOLO. The system was
+        designed to support both online and offline operation. This
+        research is useful because it provides an earlier example of
+        applying deep-learning-based object recognition to smartphone
+        navigation assistance.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
-        This is a peer-reviewed article published in the journal Sensors.
-        The paper provides details about the system architecture, recognition
-        algorithms, operating modes, and experimental results. Because it was
-        published in 2017, it also provides a useful comparison with newer
+        This is a peer-reviewed article published in Sensors. The
+        researchers describe the architecture of the system,
+        recognition methods, operating modes, and experimental
+        results. It also provides a useful comparison with more recent
         mobile computer vision systems.
       </p>
 
@@ -99,69 +101,72 @@
       </p>
 
 
-      <h2>[3] YOLOv8-Based Android Object Detection (2025)</h2>
+      <h2 id="source3">[3] More et al. (2025)</h2>
 
       <p>
         <strong>Citation:</strong><br>
-        <em>Empowering the Visually Impaired: YOLOv8-based Object Detection
-        in Android Applications.</em> (2025).
+        More, S. S., Patil, N., Lobo, V. B., Shet, N.,
+        Goswami, D., & Rane, P. (2025).
+        <em>Empowering the Visually Impaired: YOLOv8-Based Object
+        Detection in Android Applications.</em>
         Procedia Computer Science, 252, 457-469.
       </p>
 
       <p>
         <strong>Synopsis:</strong><br>
-        This study investigates the use of YOLOv8 for real-time object detection
-        on Android devices. The researchers convert the YOLOv8 model to
-        TensorFlow Lite so it can run on mobile hardware. Several model sizes
-        and image resolutions are compared. The results show an important
-        trade-off: larger models and higher resolutions can improve accuracy,
-        but they also increase inference time. This source is useful for
-        explaining why mobile computer vision systems must balance speed,
-        model size, and detection accuracy.
+        This study investigates the use of YOLOv8 for real-time object
+        detection on Android devices. The researchers convert YOLOv8
+        into TensorFlow Lite so the model can run directly on mobile
+        hardware. Different model sizes and input resolutions are
+        compared to study the relationship between detection accuracy
+        and inference speed.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
-        This is an academic conference-proceedings article published in
-        Procedia Computer Science by Elsevier. The study reports quantitative
-        measurements such as mAP and inference time, making it useful for
-        comparing model performance on mobile devices.
+        This is an academic article published in Procedia Computer
+        Science by Elsevier. The paper reports quantitative performance
+        measurements such as detection accuracy and inference time,
+        making it useful for analyzing the trade-off between speed and
+        accuracy on mobile devices.
       </p>
 
       <p>
-        <a href="https://doi.org/10.1016/j.procs.2025.01.005" target="_blank">
+        <a href="https://doi.org/10.1016/j.procs.2025.01.005"
+           target="_blank">
           View Source
         </a>
       </p>
 
 
-      <h2>[4] Wang et al. (2024)</h2>
+      <h2 id="source4">[4] Wang et al. (2024)</h2>
 
       <p>
         <strong>Citation:</strong><br>
-        Wang, W., Jing, B., Yu, X., Sun, Y., Yang, L., & Wang, C. (2024).
-        <em>YOLO-OD: Obstacle Detection for Visually Impaired Navigation Assistance.</em>
+        Wang, W., Jing, B., Yu, X., Sun, Y., Yang, L.,
+        & Wang, C. (2024).
+        <em>YOLO-OD: Obstacle Detection for Visually Impaired
+        Navigation Assistance.</em>
         Sensors, 24(23), 7621.
       </p>
 
       <p>
         <strong>Synopsis:</strong><br>
-        This paper proposes YOLO-OD, an object detection method designed
-        specifically for navigation assistance for visually impaired users.
-        The model introduces components intended to improve the detection of
-        obstacles of different sizes, objects in cluttered outdoor scenes,
-        partially occluded objects, and small obstacles. This source is useful
-        because it focuses directly on improving the object detection algorithm
-        for real-world assistive navigation.
+        This paper introduces YOLO-OD, an object detection method
+        developed specifically for navigation assistance for visually
+        impaired users. The approach includes architectural changes
+        intended to improve the recognition of differently sized,
+        partially occluded, and difficult-to-detect obstacles in
+        complex outdoor environments.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
         This is a recent peer-reviewed article published in Sensors.
-        The researchers describe the proposed architecture, evaluation methods,
-        and quantitative results. The source is particularly useful for the
-        technical portions of this tutorial because it explains specific changes
-        made to an object detection architecture.
+        The paper describes the proposed architecture, compares it
+        with other detection approaches, and reports experimental
+        results. It is especially useful for the technical sections
+        of this tutorial.
       </p>
 
       <p>
@@ -171,71 +176,77 @@
       </p>
 
 
-      <h2>[5] Context-Aware Obstacle Detection (2017)</h2>
+      <h2 id="source5">[5] Gharani and Karimi (2017)</h2>
 
       <p>
         <strong>Citation:</strong><br>
-        <em>Context-aware obstacle detection for navigation by visually impaired.</em>
-        (2017). Image and Vision Computing, 64, 103-115.
+        Gharani, P., & Karimi, H. A. (2017).
+        <em>Context-Aware Obstacle Detection for Navigation by
+        Visually Impaired.</em>
+        Image and Vision Computing, 64, 103-115.
       </p>
 
       <p>
         <strong>Synopsis:</strong><br>
-        This research presents a smartphone-based obstacle detection approach
-        for indoor navigation. Instead of relying only on object classification,
-        the system processes consecutive video frames, calculates optical flow,
-        and tracks feature points. It also considers the direction in which the
-        user is moving to identify important regions of the image. This source
-        is useful because it demonstrates that obstacle detection can use motion
-        and contextual information in addition to deep-learning object detectors.
+        This research presents a smartphone-based obstacle detection
+        approach for indoor navigation. The method processes
+        consecutive video frames, computes optical flow, and tracks
+        feature points to identify obstacles. It also considers the
+        direction of the user's movement so the system can focus on
+        important regions of the image.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
-        This article was published in the peer-reviewed journal Image and Vision
-        Computing. It is valuable because it describes a different computer vision
-        approach from YOLO-based systems and provides additional perspective on
-        how movement and scene context can improve obstacle detection.
+        This article was published in the peer-reviewed journal
+        Image and Vision Computing. It is valuable because it presents
+        a different computer vision approach from YOLO-based object
+        detection and shows how motion and contextual information can
+        contribute to obstacle detection.
       </p>
 
       <p>
-        <a href="https://doi.org/10.1016/j.imavis.2017.06.002" target="_blank">
+        <a href="https://doi.org/10.1016/j.imavis.2017.06.002"
+           target="_blank">
           View Source
         </a>
       </p>
 
 
-      <h2>[6] Companion Navigation App (2021)</h2>
+      <h2 id="source6">[6] Panchal et al. (2021)</h2>
 
       <p>
         <strong>Citation:</strong><br>
-        <em>Companion: Easy Navigation App for Visually Impaired Persons.</em>
-        (2021). International Conference on Intelligent Technologies (CONIT).
-        IEEE.
+        Panchal, K. U., Khara, D. C., Gari, T. J.,
+        & Chavan, V. (2021).
+        <em>Companion: Easy Navigation App for Visually Impaired
+        Persons.</em>
+        2021 International Conference on Intelligent Technologies
+        (CONIT), IEEE.
       </p>
 
       <p>
         <strong>Synopsis:</strong><br>
-        This work presents an Android navigation application that combines
-        YOLOv3 object detection with depth estimation and text-to-speech.
-        Instead of announcing every detected object, the system attempts to
-        identify the closest and most relevant obstacle. Depth information and
-        bounding-box size are used to help decide which object should be
-        communicated to the user. This source supports an important idea in this
-        tutorial: recognizing an object is not enough; the system must determine
-        whether that object is actually relevant to navigation.
+        This work presents an Android navigation application that
+        combines YOLOv3 object detection, depth estimation, and
+        text-to-speech. The system attempts to determine which detected
+        object is closest and most relevant instead of announcing every
+        object in the scene. Depth information and bounding-box size
+        are used to help prioritize obstacles before audio feedback is
+        produced.
       </p>
 
       <p>
         <strong>Reliability:</strong><br>
-        This paper was published through an IEEE conference. IEEE is a major
-        professional organization for engineering and computer science research.
-        The paper is useful because it provides an implemented mobile example
-        that combines object detection, depth estimation, and audio feedback.
+        This paper was published in the IEEE International Conference
+        on Intelligent Technologies. It is useful because it presents
+        an implemented mobile system that combines object detection,
+        depth estimation, and audio feedback.
       </p>
 
       <p>
-        <a href="https://doi.org/10.1109/CONIT51480.2021.9498496" target="_blank">
+        <a href="https://doi.org/10.1109/CONIT51480.2021.9498496"
+           target="_blank">
           View Source
         </a>
       </p>
