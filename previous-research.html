@@ -15,8 +15,8 @@
     <h1>Previous Research and Existing Systems</h1>
 
     <p>
-      Reviewing earlier mobile vision systems designed to support obstacle
-      detection and navigation for blind and low-vision users.
+      Reviewing earlier and recent mobile vision systems developed for
+      obstacle detection and navigation assistance.
     </p>
   </header>
 
@@ -27,95 +27,210 @@
       <h2>Why Review Previous Systems?</h2>
 
       <p>
-        Looking at previous research helps us understand how mobile obstacle
-        detection systems have developed over time. Different researchers have
-        used smartphone cameras, object recognition, navigation assistance, and
-        feedback methods in different ways.
+        Reviewing previous systems helps show how mobile obstacle detection
+        has developed over time. Earlier research focused on proving that
+        smartphones could be used as practical assistive platforms, while
+        more recent work uses stronger deep learning models and more advanced
+        methods for deciding which detected objects are actually important.
       </p>
 
       <p>
-        These systems also reveal common strengths and limitations, including
-        processing speed, recognition accuracy, environmental conditions, and
-        the challenge of turning detected objects into useful navigation warnings.
+        Comparing these systems also helps identify recurring problems such as
+        processing speed, detection accuracy, depth estimation, crowded scenes,
+        and the need to avoid unnecessary warnings.
       </p>
 
-      <h2>Simple Smartphone-Based Guiding System</h2>
+      <h2>Lin, Lee, and Chiang: Smartphone Guiding System</h2>
 
       <p>
-        Lin, Lee, and Chiang proposed a smartphone-based guiding system for
-        visually impaired users. Their work explored how a mobile device could
-        support navigation by using visual information from the smartphone camera.
-      </p>
-
-      <p>
-        One important idea from this type of system is that a smartphone can act
-        as a portable assistive platform. Instead of requiring a large external
-        device, the user can rely on hardware already available in a phone,
-        including the camera, processor, speaker, and vibration system.
-      </p>
-
-      <h2>Computer Vision-Based Mobile Obstacle Detection</h2>
-
-      <p>
-        More recent research has focused directly on using computer vision and
-        object detection for identifying obstacles in the user's environment.
-        Bastidas-Guacho and colleagues presented a mobile system designed for
-        visually impaired individuals that uses computer vision to detect objects
-        that may interfere with navigation.
+        Lin, Lee, and Chiang developed a smartphone-based guiding system for
+        visually impaired users
+        <a href="bibliography.html#source2">[2]</a>.
+        Their work is an important example of earlier mobile assistive vision
+        research because it showed that object recognition could be integrated
+        into a smartphone-based navigation system.
       </p>
 
       <p>
-        Modern systems benefit from improvements in deep learning object detection.
-        Instead of relying only on traditional image-processing rules, a trained
-        neural network can recognize several object categories and locate them
-        within the image.
+        Their system used deep-learning object recognition methods including
+        Faster R-CNN and YOLO. It also supported both online and offline
+        operation, showing how a mobile application could adapt depending on
+        network availability
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
-      <h2>Common System Components</h2>
+      <p>
+        This work helped demonstrate the potential of smartphones as assistive
+        devices, but it also reflects the limitations of earlier mobile hardware
+        and object recognition technology.
+      </p>
+
+      <h2>Bastidas-Guacho et al.: Modern Mobile Obstacle Detection</h2>
 
       <p>
-        Although individual implementations differ, many mobile assistive vision
-        systems contain similar components:
+        Bastidas-Guacho and colleagues presented a more recent mobile obstacle
+        detection system specifically designed for visually impaired individuals
+        <a href="bibliography.html#source1">[1]</a>.
+      </p>
+
+      <p>
+        Their system uses a YOLO-based detector and the Detectra dataset, which
+        contains thousands of images across many object classes. The application
+        also includes auditory and haptic feedback, connecting object detection
+        directly to the way information is communicated to the user
+        <a href="bibliography.html#source1">[1]</a>.
+      </p>
+
+      <p>
+        This research is especially relevant because it represents a complete
+        mobile assistive pipeline: visual input, object detection, obstacle
+        information, and user feedback.
+      </p>
+
+      <h2>More et al.: YOLOv8 on Android</h2>
+
+      <p>
+        More and colleagues studied how YOLOv8 can be used for object detection
+        in Android applications designed to support visually impaired users
+        <a href="bibliography.html#source3">[3]</a>.
+      </p>
+
+      <p>
+        Their work is useful because it focuses on mobile deployment. The model
+        is converted to TensorFlow Lite so that inference can be performed on
+        Android hardware.
+      </p>
+
+      <p>
+        The researchers compare different model configurations and image
+        resolutions, showing that mobile vision involves an important trade-off:
+        improving accuracy may require more computation, while faster models may
+        sacrifice some detection performance
+        <a href="bibliography.html#source3">[3]</a>.
+      </p>
+
+      <h2>Wang et al.: YOLO-OD</h2>
+
+      <p>
+        Wang and colleagues proposed YOLO-OD, an object detection approach
+        designed specifically for visually impaired navigation assistance
+        <a href="bibliography.html#source4">[4]</a>.
+      </p>
+
+      <p>
+        Their research focuses on difficult real-world situations such as
+        differently sized obstacles, cluttered scenes, small objects, and
+        partially hidden objects.
+      </p>
+
+      <p>
+        This type of work shows how researchers are moving beyond general-purpose
+        object detection and adapting detection architectures to the specific
+        needs of assistive navigation
+        <a href="bibliography.html#source4">[4]</a>.
+      </p>
+
+      <h2>Gharani and Karimi: Context-Aware Obstacle Detection</h2>
+
+      <p>
+        Not every obstacle detection system relies entirely on object
+        classification. Gharani and Karimi developed a context-aware approach
+        that analyzes consecutive smartphone video frames
+        <a href="bibliography.html#source5">[5]</a>.
+      </p>
+
+      <p>
+        Their method uses techniques such as optical flow and feature tracking.
+        It also considers the user's direction of movement so that the system can
+        focus on the regions of the scene that are most relevant to navigation.
+      </p>
+
+      <p>
+        This is important because it shows another way of thinking about obstacle
+        detection: the system can analyze motion and scene context instead of
+        relying only on the identity of detected objects.
+      </p>
+
+      <h2>Panchal et al.: Companion Navigation App</h2>
+
+      <p>
+        Panchal and colleagues developed the Companion Android navigation
+        application for visually impaired users
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
+      <p>
+        The system combines YOLOv3 object detection with depth estimation and
+        text-to-speech. Instead of announcing every detected object, it attempts
+        to identify the closest or most relevant obstacle before generating
+        feedback
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
+      <p>
+        This approach directly addresses one of the biggest problems in assistive
+        vision: detecting many objects is not useful unless the system can decide
+        which ones actually matter.
+      </p>
+
+      <h2>Comparison of the Research</h2>
+
+      <p>
+        The reviewed systems show a clear progression in mobile assistive
+        computer vision.
       </p>
 
       <ul>
-        <li>A smartphone or portable camera for collecting visual input</li>
-        <li>An image-processing or object-detection algorithm</li>
-        <li>A method for identifying important objects or obstacles</li>
-        <li>A feedback mechanism such as speech, sound, or vibration</li>
-        <li>A real-time processing loop that updates as the user moves</li>
+        <li>
+          Earlier systems demonstrated that smartphones could support object
+          recognition and navigation assistance
+          <a href="bibliography.html#source2">[2]</a>.
+        </li>
+
+        <li>
+          More recent systems use modern YOLO models and mobile optimization
+          techniques to improve real-time detection
+          <a href="bibliography.html#source1">[1]</a>
+          <a href="bibliography.html#source3">[3]</a>.
+        </li>
+
+        <li>
+          Specialized models such as YOLO-OD attempt to improve performance
+          under difficult navigation conditions
+          <a href="bibliography.html#source4">[4]</a>.
+        </li>
+
+        <li>
+          Context-aware approaches use motion and user direction to identify
+          important obstacles
+          <a href="bibliography.html#source5">[5]</a>.
+        </li>
+
+        <li>
+          Other systems combine detection with depth estimation to prioritize
+          the objects that are most relevant to the user
+          <a href="bibliography.html#source6">[6]</a>.
+        </li>
       </ul>
 
-      <h2>How Earlier and Newer Approaches Differ</h2>
+      <h2>What Previous Research Shows</h2>
 
       <p>
-        Earlier mobile guiding systems were limited by the processing power and
-        computer vision techniques available at the time. More recent smartphones
-        can run more advanced deep learning models and can process images at a
-        much higher speed.
+        Previous research demonstrates that smartphone-based computer vision
+        can provide useful environmental information for blind and low-vision
+        users. However, the research also shows that strong object recognition
+        by itself is not enough.
       </p>
 
       <p>
-        Modern approaches can therefore recognize a wider variety of objects.
-        However, improved object detection does not completely solve the navigation
-        problem. A system must still determine which detected objects are close,
-        which are in the user's path, and which require an immediate warning.
-      </p>
-
-      <h2>What We Learn from Previous Research</h2>
-
-      <p>
-        Previous research shows that smartphones are promising devices for
-        assistive computer vision because they combine cameras, processing,
-        communication, and user-feedback hardware in one portable platform.
+        A practical mobile obstacle detection system must balance several goals:
+        accurate detection, fast processing, low mobile resource usage, obstacle
+        relevance, and clear user feedback.
       </p>
 
       <p>
-        At the same time, the research shows that obstacle detection is not simply
-        an object-recognition problem. A practical system must also deal with
-        real-world conditions such as motion, lighting, partially hidden objects,
-        crowded environments, limited mobile computing resources, and the need
-        to provide feedback quickly.
+        These recurring issues explain why obstacle detection continues to be
+        an active computer vision research problem.
       </p>
 
       <p>
