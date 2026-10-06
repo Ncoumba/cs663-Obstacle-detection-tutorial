@@ -36,28 +36,53 @@
       <h2>Why Is It Important?</h2>
 
       <p>
-        For blind and low-vision users, navigating unfamiliar environments can
-        be difficult because obstacles such as pedestrians, furniture, bicycles,
-        vehicles, or other objects may not be easily detected in time.
-        Computer vision can help provide additional information about the
-        surrounding environment.
+        Blind and low-vision users may face difficulty identifying obstacles
+        while moving through unfamiliar, crowded, or changing environments.
+        Mobile computer vision systems have been investigated as a way to provide
+        additional information about nearby objects and support navigation
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>.
+      </p>
+
+      <p>
+        Possible obstacles can include pedestrians, bicycles, vehicles,
+        furniture, and other objects that may interfere with the user's movement.
+        However, simply recognizing an object does not automatically determine
+        whether it is actually dangerous or located in the user's walking path.
       </p>
 
       <h2>Why Use a Mobile Phone?</h2>
 
       <p>
         Smartphones are useful platforms for assistive computer vision because
-        they already include cameras, processors, speakers, vibration motors,
-        and other sensors. These components can be combined to detect objects
-        and communicate warnings to the user through audio or haptic feedback.
+        they combine several important components in one portable device,
+        including a camera, processor, speaker, vibration motor, and other
+        sensors.
+      </p>
+
+      <p>
+        Previous research has demonstrated that smartphone-based systems can use
+        camera images together with computer vision algorithms to support
+        navigation and obstacle recognition
+        <a href="bibliography.html#source2">[2]</a>.
+        More recent systems also combine object detection with auditory and
+        haptic feedback
+        <a href="bibliography.html#source1">[1]</a>.
       </p>
 
       <h2>Goal of a Mobile Obstacle Detection System</h2>
 
       <p>
-        The goal of a mobile obstacle detection system is not only to recognize
-        objects, but also to determine which objects may affect the user's path
-        and provide useful feedback quickly enough to support safe navigation.
+        The goal of a mobile obstacle detection system is not simply to name
+        objects in the camera image. A useful system must detect objects,
+        determine which detections are relevant to navigation, and communicate
+        useful information quickly enough to assist the user while moving.
+      </p>
+
+      <p>
+        This creates an important computer vision problem: the system must move
+        from basic object recognition toward an understanding of which objects
+        represent meaningful obstacles.
       </p>
 
       <p>
