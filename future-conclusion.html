@@ -33,113 +33,190 @@
       </p>
 
       <p>
-        Future mobile systems may benefit from smaller and more efficient deep learning
-        models that require less computation while still maintaining strong detection
-        accuracy.
+        Research on mobile YOLO implementations shows that there is a trade-off
+        between model size, image resolution, detection accuracy, and inference speed
+        <a href="bibliography.html#source3">[3]</a>.
       </p>
+
+      <p>
+        Future systems may benefit from smaller, optimized, or hardware-accelerated
+        models that can maintain useful detection accuracy while reducing computation
+        on mobile devices.
+      </p>
+
 
       <h2>Better Distance and Depth Estimation</h2>
 
       <p>
-        Standard 2D vision systems do not directly measure the distance between the
-        camera and an object. This makes it difficult to determine whether a detected
-        object is close enough to represent an immediate obstacle.
+        Standard 2D computer vision does not directly provide precise distance
+        measurements. This creates a problem because recognizing an object does
+        not reveal how close it is to the user.
       </p>
 
       <p>
-        Future systems could combine 2D object detection with additional information
-        such as monocular depth estimation, motion information, or other smartphone
-        sensors. This could help the system better estimate how far away an object is.
+        Some mobile assistive systems combine object detection with depth estimation
+        and bounding-box information to help prioritize nearby obstacles
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
+
+      <p>
+        Future systems could improve this further by combining object detection with
+        monocular depth estimation, motion information, or additional smartphone
+        sensors.
+      </p>
+
 
       <h2>Understanding the User's Walking Path</h2>
 
       <p>
-        A major improvement would be the ability to determine whether a detected object
-        is actually located in the user's path.
+        A major future improvement would be better understanding of whether a
+        detected object is actually located in the user's path.
       </p>
 
       <p>
-        Instead of warning the user about every visible object, the system could analyze
-        the position of each detection and focus on objects that create the greatest
-        risk of collision.
+        Context-aware research has shown that motion information and the user's
+        direction of travel can help identify which areas of the scene are most
+        relevant
+        <a href="bibliography.html#source5">[5]</a>.
       </p>
+
+      <p>
+        Instead of treating every detected object equally, future systems could
+        combine object position, movement, estimated distance, and user direction
+        to calculate a more meaningful collision risk.
+      </p>
+
+
+      <h2>Improving Detection in Difficult Environments</h2>
+
+      <p>
+        Real-world navigation includes crowded scenes, partial occlusion, small
+        objects, and objects at different distances.
+      </p>
+
+      <p>
+        Specialized systems such as YOLO-OD show how object detection models can
+        be modified to better handle differently sized and partially hidden
+        obstacles
+        <a href="bibliography.html#source4">[4]</a>.
+      </p>
+
+      <p>
+        Future research may continue adapting detection architectures specifically
+        for assistive navigation instead of relying only on general-purpose models.
+      </p>
+
 
       <h2>Reducing Unnecessary Warnings</h2>
 
       <p>
-        Too many warnings can make an assistive application difficult to use. Future
-        systems should prioritize information so that users receive only the most
-        important alerts.
+        A useful system should not warn the user about every object visible in the
+        camera frame. Too many alerts could make the system distracting or difficult
+        to use.
       </p>
 
       <p>
-        For example, a nearby obstacle directly in front of the user should receive a
-        higher priority than an object located far away or near the edge of the camera
-        view.
+        Systems that use depth or contextual information demonstrate one possible
+        solution: prioritize the object that appears most relevant before producing
+        feedback
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
+
+      <p>
+        Future applications could assign risk levels to detections and only
+        communicate objects that reach a certain level of urgency.
+      </p>
+
 
       <h2>Improved Audio and Haptic Feedback</h2>
 
       <p>
-        Future research can also improve the way detection results are communicated.
-        Audio feedback can provide detailed information, while haptic feedback can
-        provide fast and less distracting warnings.
+        The way information is communicated is just as important as the detection
+        itself. Audio can provide detailed information, while vibration can provide
+        fast warnings without requiring continuous spoken messages.
       </p>
 
       <p>
-        A combination of audio and vibration could allow the system to communicate
-        different levels of urgency without overwhelming the user.
+        Recent mobile obstacle-detection research has combined auditory and haptic
+        feedback in the same assistive application
+        <a href="bibliography.html#source1">[1]</a>.
       </p>
+
+      <p>
+        Future systems could personalize vibration patterns, warning frequency,
+        and spoken messages based on the user's preferences.
+      </p>
+
 
       <h2>Personalized Assistive Systems</h2>
 
       <p>
-        Different users may prefer different types of feedback or warning sensitivity.
-        Future applications could allow users to customize how often warnings occur,
-        which object categories are important, and whether the system uses audio,
-        vibration, or both.
+        Different users may have different needs. Some may prefer detailed spoken
+        descriptions, while others may prefer short alerts or mostly haptic feedback.
       </p>
+
+      <p>
+        Future applications could allow users to customize which objects are
+        considered important, the sensitivity of warnings, and the type of feedback
+        they receive.
+      </p>
+
 
       <h2>Using Multiple Sources of Information</h2>
 
       <p>
-        Computer vision may become more useful when combined with other smartphone
-        sensors and navigation technologies. GPS, inertial sensors, mapping data, and
-        depth information could provide additional context about the user's location
-        and movement.
+        Future obstacle detection systems may become more reliable by combining
+        computer vision with additional sources of information.
       </p>
 
       <p>
-        Combining several sources of information may help overcome some of the
-        limitations of relying only on a single 2D camera.
+        GPS, inertial sensors, mapping information, motion analysis, and depth
+        estimation could provide context that a single 2D camera image cannot
+        provide on its own.
       </p>
+
+      <p>
+        This direction is consistent with previous research showing that obstacle
+        detection improves when motion, depth, or contextual information is added
+        to basic object recognition
+        <a href="bibliography.html#source5">[5]</a>
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
 
       <h2>Conclusion</h2>
 
       <p>
-        Mobile phones provide a promising platform for computer vision-based obstacle
-        detection because they combine cameras, processing power, sensors, speakers,
-        and vibration hardware in a portable device.
+        Previous research demonstrates that smartphones are promising platforms
+        for assistive computer vision. They combine cameras, processing hardware,
+        speakers, vibration motors, and other sensors in a device that many users
+        already carry
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
       <p>
-        Object detection models such as YOLO can identify and locate objects in camera
-        images, making them useful for detecting possible obstacles. However, recognizing
-        an object is only one part of the problem.
+        YOLO-based object detection can identify and locate multiple objects in
+        camera images, and newer mobile implementations continue to improve the
+        ability to run these models efficiently
+        <a href="bibliography.html#source3">[3]</a>
+        <a href="bibliography.html#source4">[4]</a>.
       </p>
 
       <p>
-        A practical assistive system must also determine whether an object is relevant
-        to the user's path, process information quickly, estimate obstacle importance,
-        and communicate warnings in a useful way.
+        However, the research reviewed in this tutorial also shows that object
+        recognition alone is not enough. A practical assistive system must determine
+        whether a detected object is relevant to the user's path, estimate its
+        importance, process information quickly, and communicate useful feedback.
       </p>
 
       <p>
-        Future improvements in mobile artificial intelligence, depth estimation,
-        efficient object detection, and user-centered feedback could make these systems
-        more effective for supporting blind and low-vision users during navigation.
+        Future improvements in efficient deep learning, depth estimation,
+        context-aware vision, mobile hardware, and user-centered feedback could
+        make smartphone-based obstacle detection more useful for blind and
+        low-vision users.
       </p>
+
 
       <p>
         <a href="index.html">← Back to Home</a>
