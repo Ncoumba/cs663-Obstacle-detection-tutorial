@@ -62,3 +62,16 @@ footer {
   background-color: #e9eef5;
   color: #555;
 }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link .section-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-link .section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
