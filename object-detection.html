@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Object Detection for Obstacle Recognition</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Object Detection for Obstacle Recognition</h1>
+
+    <p>
+      How computer vision models identify and locate potential obstacles in an image.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <h2>Image Classification vs. Object Detection</h2>
+
+      <p>
+        Image classification assigns a label to an entire image. For example,
+        a classification model may decide that an image contains a bicycle.
+        However, it does not normally show where the bicycle appears in the image.
+      </p>
+
+      <p>
+        Object detection goes one step further. It identifies the type of object
+        and also estimates its location using a bounding box. This is especially
+        useful for obstacle detection because a mobile system needs to know not only
+        what object is present, but also where it appears in the user's field of view.
+      </p>
+
+      <h2>What Is a Bounding Box?</h2>
+
+      <p>
+        A bounding box is a rectangular region drawn around a detected object.
+        The box is usually represented using coordinates that describe its position
+        in the image. The detector also provides a class label, such as person,
+        bicycle, car, or chair, along with a confidence score.
+      </p>
+
+      <h2>Confidence Score</h2>
+
+      <p>
+        The confidence score represents how certain the model is that a detected
+        region contains a particular object. For example, a model might detect a
+        pedestrian with a confidence score of 0.91. Applications can use a minimum
+        confidence threshold so that detections with very low confidence are ignored.
+      </p>
+
+      <h2>YOLO for Real-Time Object Detection</h2>
+
+      <p>
+        YOLO, which stands for "You Only Look Once," is a family of object detection
+        models designed to detect multiple objects in an image efficiently. Instead
+        of running separate stages for locating and classifying objects, YOLO predicts
+        object locations and classes in a single detection process.
+      </p>
+
+      <p>
+        This makes YOLO useful for real-time applications where speed is important.
+        In a mobile obstacle detection system, each camera frame can be processed by
+        a YOLO-based model to identify nearby objects such as people, bicycles,
+        vehicles, and other possible hazards.
+      </p>
+
+      <h2>Why Speed Matters on a Mobile Device</h2>
+
+      <p>
+        Obstacle detection must happen quickly enough to provide useful feedback while
+        the user is moving. If the system takes too long to analyze each frame, the
+        warning may arrive after the user has already reached the obstacle.
+      </p>
+
+      <p>
+        Mobile devices also have limited processing power, memory, and battery capacity
+        compared with desktop computers or cloud servers. For this reason, mobile
+        applications often use smaller or optimized object detection models that can
+        balance detection accuracy with processing speed.
+      </p>
+
+      <h2>From Detection to Obstacle Recognition</h2>
+
+      <p>
+        Detecting an object does not automatically mean that the object is dangerous.
+        For example, a car detected far away or outside the user's walking path may not
+        require an immediate warning. A useful obstacle detection system therefore needs
+        an additional step that decides whether a detected object is relevant to the
+        user's movement.
+      </p>
+
+      <p>
+        This is one of the main challenges in assistive mobile vision: recognizing an
+        object is easier than determining whether that object is actually an obstacle.
+      </p>
+
+      <p>
+        <a href="index.html">← Back to Home</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS663 Computer Vision Tutorial | Ndeye Traore</p>
+  </footer>
+
+</body>
+</html>
