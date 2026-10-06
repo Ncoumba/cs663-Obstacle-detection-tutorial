@@ -15,7 +15,7 @@
     <h1>Object Detection for Obstacle Recognition</h1>
 
     <p>
-      How computer vision models identify and locate potential obstacles in an image.
+      How computer vision models identify and locate possible obstacles in an image.
     </p>
   </header>
 
@@ -27,79 +27,117 @@
 
       <p>
         Image classification assigns a label to an entire image. For example,
-        a classification model may decide that an image contains a bicycle.
-        However, it does not normally show where the bicycle appears in the image.
+        a classification model may decide that an image contains a bicycle,
+        but it does not normally show where the bicycle appears.
       </p>
 
       <p>
-        Object detection goes one step further. It identifies the type of object
-        and also estimates its location using a bounding box. This is especially
-        useful for obstacle detection because a mobile system needs to know not only
-        what object is present, but also where it appears in the user's field of view.
+        Object detection goes further by identifying both the object category
+        and its location in the image. This is especially useful for obstacle
+        detection because a mobile assistive system needs to know not only what
+        object is present, but also where it appears in the user's field of view.
       </p>
 
-      <h2>What Is a Bounding Box?</h2>
+      <h2>Bounding Boxes</h2>
 
       <p>
-        A bounding box is a rectangular region drawn around a detected object.
-        The box is usually represented using coordinates that describe its position
-        in the image. The detector also provides a class label, such as person,
-        bicycle, car, or chair, along with a confidence score.
+        Object detectors usually represent detected objects using bounding boxes.
+        A bounding box is a rectangle that surrounds the detected object and
+        describes its position within the image.
+      </p>
+
+      <p>
+        Each detection can also contain an object label and confidence score.
+        Modern mobile obstacle-detection systems use this information to identify
+        objects that may be relevant to navigation
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source3">[3]</a>.
       </p>
 
       <h2>Confidence Score</h2>
 
       <p>
-        The confidence score represents how certain the model is that a detected
-        region contains a particular object. For example, a model might detect a
-        pedestrian with a confidence score of 0.91. Applications can use a minimum
-        confidence threshold so that detections with very low confidence are ignored.
-      </p>
-
-      <h2>YOLO for Real-Time Object Detection</h2>
-
-      <p>
-        YOLO, which stands for "You Only Look Once," is a family of object detection
-        models designed to detect multiple objects in an image efficiently. Instead
-        of running separate stages for locating and classifying objects, YOLO predicts
-        object locations and classes in a single detection process.
+        A confidence score represents how certain the model is about a detection.
+        For example, the system may identify a person with a confidence score of
+        0.91. A mobile application can use a confidence threshold to remove
+        detections that are considered too uncertain.
       </p>
 
       <p>
-        This makes YOLO useful for real-time applications where speed is important.
-        In a mobile obstacle detection system, each camera frame can be processed by
-        a YOLO-based model to identify nearby objects such as people, bicycles,
-        vehicles, and other possible hazards.
+        Choosing the threshold involves a trade-off. A threshold that is too high
+        may cause the system to miss real obstacles, while a threshold that is too
+        low may create too many incorrect detections.
       </p>
 
-      <h2>Why Speed Matters on a Mobile Device</h2>
+      <h2>YOLO</h2>
 
       <p>
-        Obstacle detection must happen quickly enough to provide useful feedback while
-        the user is moving. If the system takes too long to analyze each frame, the
-        warning may arrive after the user has already reached the obstacle.
-      </p>
-
-      <p>
-        Mobile devices also have limited processing power, memory, and battery capacity
-        compared with desktop computers or cloud servers. For this reason, mobile
-        applications often use smaller or optimized object detection models that can
-        balance detection accuracy with processing speed.
-      </p>
-
-      <h2>From Detection to Obstacle Recognition</h2>
-
-      <p>
-        Detecting an object does not automatically mean that the object is dangerous.
-        For example, a car detected far away or outside the user's walking path may not
-        require an immediate warning. A useful obstacle detection system therefore needs
-        an additional step that decides whether a detected object is relevant to the
-        user's movement.
+        YOLO stands for "You Only Look Once." It is a family of object detection
+        models designed to identify and localize multiple objects efficiently.
+        YOLO-based methods have been used in several assistive navigation systems
+        for blind and low-vision users
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>
+        <a href="bibliography.html#source4">[4]</a>.
       </p>
 
       <p>
-        This is one of the main challenges in assistive mobile vision: recognizing an
-        object is easier than determining whether that object is actually an obstacle.
+        YOLO is particularly attractive for mobile applications because obstacle
+        detection needs to happen quickly. A warning that arrives too late may no
+        longer be useful to a person who is already moving toward an obstacle.
+      </p>
+
+      <h2>Running Object Detection on Mobile Devices</h2>
+
+      <p>
+        Mobile devices have less processing power, memory, and battery capacity
+        than larger computer systems. Because of this, developers often need to
+        use smaller or optimized versions of object detection models.
+      </p>
+
+      <p>
+        Research using YOLOv8 on Android shows the importance of balancing model
+        accuracy and inference speed. Smaller models and lower input resolutions
+        can run faster, while larger configurations may provide stronger detection
+        performance at the cost of additional computation
+        <a href="bibliography.html#source3">[3]</a>.
+      </p>
+
+      <h2>Improving Detection for Navigation</h2>
+
+      <p>
+        Standard object detection models are not always optimized for assistive
+        navigation. Obstacles may be small, partially hidden, or surrounded by
+        many other objects.
+      </p>
+
+      <p>
+        YOLO-OD was proposed specifically to improve obstacle detection for
+        visually impaired navigation and addresses challenges such as differently
+        sized objects, cluttered environments, and occlusion
+        <a href="bibliography.html#source4">[4]</a>.
+      </p>
+
+      <h2>Object Detection Is Only the First Step</h2>
+
+      <p>
+        A correct object detection does not automatically mean that the object is
+        an obstacle. For example, a detected vehicle may be far away or outside
+        the user's walking path.
+      </p>
+
+      <p>
+        Some assistive systems therefore combine object detection with depth
+        estimation, bounding-box information, or other contextual information
+        before deciding which object should be communicated to the user
+        <a href="bibliography.html#source5">[5]</a>
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
+      <p>
+        This distinction is important throughout this tutorial: object detection
+        tells the system what and where an object is, while obstacle detection
+        requires deciding whether that object is relevant to safe navigation.
       </p>
 
       <p>
