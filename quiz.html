@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interactive Quiz</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Interactive Quiz</h1>
+
+    <p>
+      Test your understanding of mobile obstacle detection and computer vision.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <form id="quizForm">
+
+        <h2>Question 1</h2>
+        <p>
+          What is the main difference between image classification and object detection?
+        </p>
+
+        <label>
+          <input type="radio" name="q1" value="a">
+          Image classification detects depth, while object detection does not.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q1" value="b">
+          Image classification assigns a label to an image, while object detection
+          also locates objects using bounding boxes.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q1" value="c">
+          Object detection only works on videos.
+        </label>
+
+
+        <h2>Question 2</h2>
+        <p>
+          What information does a YOLO detection normally include?
+        </p>
+
+        <label>
+          <input type="radio" name="q2" value="a">
+          A class label, confidence score, and bounding box
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q2" value="b">
+          Only the name of the object
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q2" value="c">
+          Only the distance between the camera and the object
+        </label>
+
+
+        <h2>Question 3</h2>
+        <p>
+          Why is processing speed important in mobile obstacle detection?
+        </p>
+
+        <label>
+          <input type="radio" name="q3" value="a">
+          Because the system needs to provide warnings before the user reaches
+          the obstacle.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q3" value="b">
+          Because faster models always have better accuracy.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q3" value="c">
+          Because smartphones cannot display images slowly.
+        </label>
+
+
+        <h2>Question 4</h2>
+        <p>
+          Why is object detection alone not enough for obstacle detection?
+        </p>
+
+        <label>
+          <input type="radio" name="q4" value="a">
+          Because detected objects may not actually be located in the user's path.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q4" value="b">
+          Because object detectors cannot identify people.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q4" value="c">
+          Because object detection only works indoors.
+        </label>
+
+
+        <h2>Question 5</h2>
+        <p>
+          Which of the following can make object detection more difficult?
+        </p>
+
+        <label>
+          <input type="radio" name="q5" value="a">
+          Low light, occlusion, crowded scenes, and motion blur
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q5" value="b">
+          Only high-resolution images
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q5" value="c">
+          Using audio feedback
+        </label>
+
+
+        <h2>Question 6</h2>
+        <p>
+          What is one advantage of haptic feedback?
+        </p>
+
+        <label>
+          <input type="radio" name="q6" value="a">
+          It can provide vibration-based warnings without requiring continuous audio.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q6" value="b">
+          It automatically improves object detection accuracy.
+        </label><br><br>
+
+        <label>
+          <input type="radio" name="q6" value="c">
+          It measures object distance using GPS.
+        </label>
+
+
+        <br><br>
+
+        <button type="button" onclick="gradeQuiz()">
+          Check Answers
+        </button>
+
+      </form>
+
+      <div id="quizResult"></div>
+
+      <p>
+        <a href="index.html">← Back to Home</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS663 Computer Vision Tutorial | Ndeye Traore</p>
+  </footer>
+
+
+  <script>
+    function gradeQuiz() {
+
+      const answers = {
+        q1: "b",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "a",
+        q6: "a"
+      };
+
+      let score = 0;
+      let answered = 0;
+
+      for (const question in answers) {
+
+        const selected =
+          document.querySelector('input[name="' + question + '"]:checked');
+
+        if (selected) {
+          answered++;
+
+          if (selected.value === answers[question]) {
+            score++;
+          }
+        }
+      }
+
+      const result = document.getElementById("quizResult");
+
+      if (answered < 6) {
+        result.innerHTML =
+          "<h2>Please answer all six questions before checking your score.</h2>";
+        return;
+      }
+
+      let message = "";
+
+      if (score === 6) {
+        message = "Excellent! You have a strong understanding of the topic.";
+      }
+      else if (score >= 4) {
+        message = "Good job! You understand most of the main concepts.";
+      }
+      else {
+        message = "Review the tutorial sections and try the quiz again.";
+      }
+
+      result.innerHTML =
+        "<h2>Your Score: " + score + "/6</h2>" +
+        "<p>" + message + "</p>";
+    }
+  </script>
+
+</body>
+</html>
