@@ -29,125 +29,159 @@
         One of the main applications of mobile obstacle detection is to support
         navigation for blind and low-vision users. A smartphone camera can capture
         the environment in front of the user while a computer vision system analyzes
-        the scene for possible obstacles.
+        the scene for possible obstacles
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
       <p>
-        The purpose is not to replace traditional mobility tools such as a white
-        cane or guide dog, but to provide additional environmental information that
-        may help the user become aware of objects that are difficult to detect.
+        The purpose is not to replace traditional mobility tools such as a white cane
+        or guide dog, but to provide additional environmental information that may
+        help the user become aware of surrounding objects.
       </p>
+
 
       <h2>Detecting Common Obstacles</h2>
 
       <p>
-        An object detection system can identify several types of objects that may
-        be important during navigation. Examples include pedestrians, bicycles,
-        vehicles, chairs, and other objects that may appear in the user's path.
+        Object detection models can identify several types of objects that may be
+        important during navigation, including pedestrians, bicycles, vehicles,
+        furniture, and other items that could interfere with movement.
       </p>
 
       <p>
-        The detected object can be represented using a class label, bounding box,
-        and confidence score. The mobile application can then decide whether the
-        detection should be communicated to the user.
+        YOLO-based systems have been explored for this purpose because they can
+        identify multiple objects and their locations within a camera image
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source4">[4]</a>.
       </p>
+
 
       <h2>Audio Feedback</h2>
 
       <p>
-        Audio feedback is one way to communicate detected obstacles. The application
-        may use speech to tell the user what type of object has been detected or
-        where the obstacle is located.
+        Audio feedback is one way to communicate detected obstacles. A mobile
+        application can use speech or sound to tell the user what type of object
+        has been detected or provide information about its position.
       </p>
 
       <p>
-        For example, the system could provide a short warning such as "person ahead"
-        or "bicycle on the left." Spoken feedback can provide useful information,
-        but too many messages may become distracting in a crowded environment.
+        For example, a system could generate a warning such as "person ahead" or
+        "bicycle on the left." Research has used text-to-speech as part of
+        smartphone-based navigation systems
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
+
 
       <h2>Haptic Feedback</h2>
 
       <p>
         Haptic feedback uses vibration to communicate information. Smartphones
-        already contain vibration motors, making this a practical feedback method
-        for mobile assistive applications.
+        already contain vibration motors, making this a practical option for
+        assistive applications.
       </p>
 
       <p>
-        Different vibration patterns could represent different warning levels or
-        directions. For example, a stronger or faster vibration could indicate
-        that an obstacle requires more immediate attention.
+        A recent mobile obstacle-detection system combines auditory and haptic
+        feedback so that detected obstacles can be communicated using both sound
+        and vibration
+        <a href="bibliography.html#source1">[1]</a>.
       </p>
+
 
       <h2>Combining Audio and Haptic Feedback</h2>
 
       <p>
-        A system may also combine audio and vibration. Haptic feedback could first
-        alert the user that an obstacle is nearby, while audio could provide more
-        detailed information about the object.
+        Combining multiple feedback methods may reduce the need for constant
+        spoken messages. Haptic feedback could provide a fast warning, while audio
+        could provide more detailed information about the detected object.
       </p>
 
       <p>
-        Combining multiple feedback methods may help reduce the amount of spoken
-        information while still communicating important warnings.
+        The design of the feedback system is important because too many warnings
+        could distract or overwhelm the user.
       </p>
+
 
       <h2>Indoor Navigation</h2>
 
       <p>
         Mobile obstacle detection can be useful in indoor environments such as
-        classrooms, offices, stores, hallways, and public buildings. Possible
-        obstacles may include furniture, people, doors, or objects placed in
-        walkways.
+        hallways, classrooms, offices, stores, and public buildings.
       </p>
 
       <p>
-        Indoor environments can also be challenging because lighting may vary and
-        spaces may become crowded.
+        Context-aware research has explored smartphone-based indoor obstacle
+        detection using video frames, optical flow, feature tracking, and the
+        user's direction of movement
+        <a href="bibliography.html#source5">[5]</a>.
       </p>
+
+      <p>
+        These techniques show that navigation systems can use motion and scene
+        context in addition to object labels.
+      </p>
+
 
       <h2>Outdoor Navigation</h2>
 
       <p>
         Outdoor applications may involve detecting pedestrians, bicycles,
-        vehicles, signs, or other objects near sidewalks and walking paths.
+        vehicles, and other obstacles near sidewalks and walking paths.
       </p>
 
       <p>
-        Outdoor conditions introduce additional challenges such as bright sunlight,
-        shadows, changing weather, moving vehicles, and large differences in the
-        distance between the camera and detected objects.
+        YOLO-OD was designed specifically for visually impaired navigation
+        assistance and focuses on challenges such as different object sizes,
+        cluttered scenes, and partially hidden obstacles
+        <a href="bibliography.html#source4">[4]</a>.
       </p>
+
+
+      <h2>Prioritizing Important Obstacles</h2>
+
+      <p>
+        A useful assistive system should not simply announce every object detected
+        by the camera. Instead, it should identify which objects are most relevant
+        to the user's path.
+      </p>
+
+      <p>
+        Some systems combine object detection with depth estimation and bounding-box
+        information to help determine which obstacle is closest or most important
+        <a href="bibliography.html#source6">[6]</a>.
+      </p>
+
 
       <h2>Supporting Environmental Awareness</h2>
 
       <p>
         The broader goal of this technology is to improve environmental awareness.
-        Instead of simply announcing every object detected by the camera, an
-        assistive application should identify the information that is most useful
-        for the user's current situation.
+        The system should help the user understand what is happening nearby without
+        providing too much unnecessary information.
       </p>
 
       <p>
-        A successful system therefore needs to balance object detection, obstacle
-        relevance, processing speed, and clear user feedback.
+        This requires a balance between detection accuracy, processing speed,
+        obstacle relevance, and clear user feedback
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source3">[3]</a>.
       </p>
+
 
       <h2>Important Design Consideration</h2>
 
       <p>
-        Assistive technology must be designed around the user's needs. A technically
-        accurate object detector may still be difficult to use if it provides too
-        much information, responds too slowly, or gives warnings that are not
-        relevant to the user's path.
+        A technically accurate object detector may still be difficult to use if it
+        responds too slowly, produces too many warnings, or does not distinguish
+        between important and unimportant objects.
       </p>
 
       <p>
-        For this reason, usability and feedback design are just as important as
-        object detection accuracy when building a practical mobile obstacle
-        detection system.
+        For this reason, practical mobile assistive systems must consider both
+        computer vision performance and the way information is presented to the user.
       </p>
+
 
       <p>
         <a href="index.html">← Back to Home</a>
