@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Successes, Limitations, and Challenges</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Successes, Limitations, and Challenges</h1>
+
+    <p>
+      Understanding what mobile obstacle detection systems do well and where they still struggle.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <h2>Successes of Mobile Obstacle Detection</h2>
+
+      <p>
+        Mobile obstacle detection systems have several important advantages.
+        Smartphones are portable, widely available, and already include cameras,
+        processors, speakers, vibration motors, and other sensors that can support
+        assistive computer vision.
+      </p>
+
+      <p>
+        Modern object detection models can also recognize multiple types of objects
+        within a single image. This allows a mobile system to identify possible
+        obstacles such as pedestrians, bicycles, cars, furniture, and other objects
+        that may be relevant to navigation.
+      </p>
+
+      <h2>Lighting Conditions</h2>
+
+      <p>
+        Lighting can strongly affect the quality of camera images. Low light,
+        shadows, glare, and sudden changes between bright and dark environments
+        can make objects more difficult for a computer vision model to detect.
+      </p>
+
+      <p>
+        Because a mobile obstacle detection system may be used indoors and outdoors,
+        it must work under many different lighting conditions.
+      </p>
+
+      <h2>Occlusion and Partially Hidden Objects</h2>
+
+      <p>
+        Occlusion occurs when part of an object is blocked by another object.
+        For example, a bicycle may be partly hidden behind a parked car or a person
+        may be partially blocked in a crowded environment.
+      </p>
+
+      <p>
+        Partial visibility can make object detection more difficult because the
+        model has less visual information available for recognizing the object.
+      </p>
+
+      <h2>Crowded Environments</h2>
+
+      <p>
+        Crowded scenes create another challenge. A camera frame may contain many
+        people and objects at the same time, producing several overlapping
+        detections.
+      </p>
+
+      <p>
+        The system must decide which detections are actually important to the
+        user's movement instead of overwhelming the user with unnecessary warnings.
+      </p>
+
+      <h2>Processing Speed and Delay</h2>
+
+      <p>
+        Real-time performance is critical for assistive navigation. If a mobile
+        device requires too much time to process a camera frame, the information
+        may already be outdated by the time the user receives a warning.
+      </p>
+
+      <p>
+        More complex computer vision models can sometimes improve accuracy, but
+        they may also require more processing power. This creates a trade-off
+        between detection accuracy and speed.
+      </p>
+
+      <h2>Mobile Hardware Limitations</h2>
+
+      <p>
+        Smartphones have limited battery life, memory, and processing resources
+        compared with larger computer systems. Running computer vision continuously
+        may increase battery consumption and cause the device to heat up.
+      </p>
+
+      <p>
+        Because of these limitations, mobile systems often need smaller or
+        optimized models that can operate efficiently on the device.
+      </p>
+
+      <h2>Object Detection Is Not the Same as Obstacle Detection</h2>
+
+      <p>
+        One of the most important limitations is that recognizing an object does
+        not automatically determine whether it is dangerous.
+      </p>
+
+      <p>
+        A model may correctly detect a person or a car, but that object may be far
+        away or outside the user's walking path. A useful assistive system therefore
+        needs additional information to decide whether the detected object creates
+        a real collision risk.
+      </p>
+
+      <h2>Estimating Distance with 2D Vision</h2>
+
+      <p>
+        Standard 2D images do not directly provide precise depth measurements.
+        This makes it difficult to determine exactly how far an obstacle is from
+        the user using only a single camera image.
+      </p>
+
+      <p>
+        A system may estimate distance using the apparent size or position of an
+        object, but these estimates can be affected by the real size of the object
+        and the position of the camera.
+      </p>
+
+      <h2>User Feedback Challenges</h2>
+
+      <p>
+        Even when an obstacle is detected correctly, the system must communicate
+        the information in a useful way. Too many spoken warnings could distract
+        or overwhelm the user.
+      </p>
+
+      <p>
+        Designers therefore need to decide what information should be communicated,
+        when a warning should occur, and whether audio, vibration, or a combination
+        of both would be most effective.
+      </p>
+
+      <h2>Main Challenge</h2>
+
+      <p>
+        The main challenge is not simply detecting as many objects as possible.
+        A practical system must identify the objects that matter most, determine
+        whether they affect the user's path, and provide useful feedback with very
+        little delay.
+      </p>
+
+      <p>
+        <a href="index.html">← Back to Home</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS663 Computer Vision Tutorial | Ndeye Traore</p>
+  </footer>
+
+</body>
+</html>
