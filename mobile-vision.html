@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mobile Cameras and 2D Computer Vision</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Mobile Cameras and 2D Computer Vision</h1>
+
+    <p>
+      How smartphone cameras capture visual information for obstacle detection.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+
+      <h2>How a Smartphone Camera Captures Visual Information</h2>
+
+      <p>
+        A smartphone camera captures light from the surrounding environment and
+        converts it into a digital image. When video is recorded, the phone
+        captures a sequence of individual images called frames. These frames can
+        be analyzed one at a time by a computer vision system.
+      </p>
+
+      <h2>What Is 2D Computer Vision?</h2>
+
+      <p>
+        Two-dimensional computer vision analyzes visual information contained
+        in standard images. Each image represents the scene using a grid of
+        pixels with horizontal and vertical dimensions. Unlike depth-based
+        systems, a basic 2D vision system does not directly measure the distance
+        between the camera and an object.
+      </p>
+
+      <h2>Images and Video Frames as Input</h2>
+
+      <p>
+        In a mobile obstacle detection system, the smartphone camera can provide
+        either a single image or a continuous stream of video frames. Each frame
+        is passed to a computer vision model that searches for objects such as
+        people, vehicles, bicycles, furniture, or other possible obstacles.
+      </p>
+
+      <p>
+        When video is used, the process is repeated many times per second. This
+        allows the application to update its understanding of the environment as
+        the user moves.
+      </p>
+
+      <h2>Advantages of Using a Standard Mobile Camera</h2>
+
+      <p>
+        Smartphone cameras are widely available and do not require users to carry
+        a separate specialized vision device. Modern phones also contain
+        processors that can run computer vision algorithms directly on the
+        device.
+      </p>
+
+      <p>
+        A mobile phone also includes speakers, headphones, vibration motors, GPS,
+        and other sensors that can be combined with computer vision to provide
+        feedback to the user.
+      </p>
+
+      <h2>Limitations of 2D Camera-Based Vision</h2>
+
+      <p>
+        A major limitation of standard 2D vision is that an image does not
+        directly provide accurate depth information. A computer vision system may
+        successfully recognize an object but still have difficulty determining
+        exactly how far away that object is.
+      </p>
+
+      <p>
+        Performance can also be affected by low lighting, shadows, motion blur,
+        camera angle, crowded scenes, and partially hidden objects. These
+        limitations are especially important for obstacle detection because the
+        system must provide useful information quickly while the user is moving.
+      </p>
+
+      <p>
+        <a href="index.html">← Back to Home</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CS663 Computer Vision Tutorial | Ndeye Traore</p>
+  </footer>
+
+</body>
+</html>
