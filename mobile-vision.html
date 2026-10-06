@@ -37,9 +37,14 @@
       <p>
         Two-dimensional computer vision analyzes visual information contained
         in standard images. Each image represents the scene using a grid of
-        pixels with horizontal and vertical dimensions. Unlike depth-based
-        systems, a basic 2D vision system does not directly measure the distance
-        between the camera and an object.
+        pixels with horizontal and vertical dimensions.
+      </p>
+
+      <p>
+        In mobile assistive systems, 2D camera images can be processed using
+        computer vision algorithms to identify objects in the environment
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
       <h2>Images and Video Frames as Input</h2>
@@ -47,45 +52,53 @@
       <p>
         In a mobile obstacle detection system, the smartphone camera can provide
         either a single image or a continuous stream of video frames. Each frame
-        is passed to a computer vision model that searches for objects such as
+        can be passed to a computer vision model that searches for objects such as
         people, vehicles, bicycles, furniture, or other possible obstacles.
       </p>
 
       <p>
-        When video is used, the process is repeated many times per second. This
-        allows the application to update its understanding of the environment as
-        the user moves.
+        When video is used, the process is repeated continuously so that the
+        system can update its understanding of the environment as the user moves.
+        Some approaches also use information from consecutive frames to better
+        understand motion and obstacle relevance
+        <a href="bibliography.html#source5">[5]</a>.
       </p>
 
       <h2>Advantages of Using a Standard Mobile Camera</h2>
 
       <p>
         Smartphone cameras are widely available and do not require users to carry
-        a separate specialized vision device. Modern phones also contain
-        processors that can run computer vision algorithms directly on the
-        device.
+        a separate specialized vision device. Mobile phones also include
+        processors, speakers, vibration motors, and other sensors that can be
+        combined with computer vision to provide navigation assistance.
       </p>
 
       <p>
-        A mobile phone also includes speakers, headphones, vibration motors, GPS,
-        and other sensors that can be combined with computer vision to provide
-        feedback to the user.
+        Previous research has shown that smartphones can serve as practical
+        platforms for assistive guiding and obstacle-detection systems
+        <a href="bibliography.html#source1">[1]</a>
+        <a href="bibliography.html#source2">[2]</a>.
       </p>
 
       <h2>Limitations of 2D Camera-Based Vision</h2>
 
       <p>
-        A major limitation of standard 2D vision is that an image does not
-        directly provide accurate depth information. A computer vision system may
-        successfully recognize an object but still have difficulty determining
-        exactly how far away that object is.
+        A standard 2D image does not directly provide precise depth information.
+        This means that an object detector may recognize an object but still have
+        difficulty determining exactly how far away that object is.
+      </p>
+
+      <p>
+        Some mobile navigation systems address this limitation by combining object
+        detection with depth estimation or other contextual information
+        <a href="bibliography.html#source6">[6]</a>.
       </p>
 
       <p>
         Performance can also be affected by low lighting, shadows, motion blur,
-        camera angle, crowded scenes, and partially hidden objects. These
-        limitations are especially important for obstacle detection because the
-        system must provide useful information quickly while the user is moving.
+        camera angle, crowded scenes, and partially hidden objects. These issues
+        are important for obstacle detection because the system must provide useful
+        information while the user is moving.
       </p>
 
       <p>
